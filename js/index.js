@@ -30,12 +30,10 @@ function wheel() {
 }
 
 
-const tagSelect = document.querySelectorAll('.destination .btn');
-tagSelect.forEach(function(){
-    document.addEventListener('contextmenu', function (event){
+const tagSelect = document.querySelector('.destination .btn');
+    tagSelect.addEventListener('contextmenu', function (event){
         alert('Time for Vacation!')
     })
-})
 
 
 //clicking logo refreshes page
@@ -47,17 +45,16 @@ logoBegins.addEventListener('click', function () {
 });
 
 
-// 
+const navBar = document.querySelector('.nav-container');
+navBar.addEventListener('mouseover', function(event){
+    event.target.style.backgroundColor = 'green'
+})
 //nav anchors change font color on doubleclick
 navColor.addEventListener('dblclick', function (event) {
     event.target.style.color = "orange";
+    event.preventDefault();
 });
 
-
-//nav prevent default
-navColor.addEventListener('click', function (event) {
-    event.preventDefault()
-});
 
 //change img on hover with mouseovere/mouseout
 const busImg = document.querySelector('img');
